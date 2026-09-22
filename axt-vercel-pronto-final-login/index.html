@@ -7,6 +7,8 @@
   <meta name="description" content="Protótipo funcional MVP da plataforma AXT Intelligence." />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Supabase SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="login-active">
   <!-- TELA DE LOGIN / ENTRADA DO MVP -->
@@ -16,6 +18,11 @@
       <span class="login-chip">MVP Funcional</span>
       <h1>Plataforma de Analytics para Retenção</h1>
       <p>Simulação navegável da solução AXT Intelligence para análise de churn, clientes em risco e ações de retenção.</p>
+      <script>
+  const SUPABASE_URL = 'SUA_SUPABASE_URL_AQUI';
+  const SUPABASE_ANON_KEY = 'SUA_SUPABASE_ANON_KEY_AQUI';
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
 
       <div class="login-form">
         <label>E-mail</label>
