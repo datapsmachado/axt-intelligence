@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXT Intelligence</title>
+  <meta name="description" content="Protótipo funcional MVP da plataforma AXT Intelligence." />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-active">
+  <!-- TELA DE LOGIN / ENTRADA DO MVP -->
+  <section class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <img src="assets/img/logo-axt.png" alt="AXT Intelligence" class="login-logo" />
+      <span class="login-chip">MVP Funcional</span>
+      <h1>Plataforma de Analytics para Retenção</h1>
+      <p>Simulação navegável da solução AXT Intelligence para análise de churn, clientes em risco e ações de retenção.</p>
+
+      <div class="login-form">
+        <label>E-mail</label>
+        <input value="admin@axtintelligence.com" aria-label="E-mail" />
+        <label>Senha</label>
+        <input type="password" value="123456" aria-label="Senha" />
+        <button id="enterApp" class="primary login-button">Entrar no protótipo</button>
+      </div>
+
+      <small>Ambiente demonstrativo • Dados fictícios • Projeto acadêmico</small>
+    </div>
+  </section>
+
+  <div class="app">
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+      <div class="brand">
+        <!-- Logo oficial da AXT -->
+        <img src="assets/img/logo-axt.png" alt="AXT Intelligence" />
+      </div>
+
+      <nav class="menu">
+        <button class="menu-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="menu-item" data-page="perfil">♙ <span>Clientes</span></button>
+        <button class="menu-item" data-page="risco">△ <span>Risco de Churn</span></button>
+        <button class="menu-item" data-page="analytics">▥ <span>Análises</span></button>
+        <button class="menu-item" data-page="retencao">◎ <span>Ações de Retenção</span></button>
+        <button class="menu-item" data-page="relatorios">▤ <span>Relatórios</span></button>
+        <button class="menu-item" data-page="config">⚙ <span>Configurações</span></button>
+        <button class="menu-item" id="btnLogout">↪ <span>Sair</span></button>
+      </nav>
+
+      <div class="support">
+        <div>🎧</div>
+        <div>
+          <b>Suporte</b>
+          <small>Fale com nosso time</small>
+        </div>
+        <span>↗</span>
+      </div>
+
+      <footer>AXT Intelligence © 2026</footer>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main">
+      <header class="topbar">
+        <div></div>
+        <div class="top-actions">
+          <div class="date">📅 01/05/2026 - 31/05/2026⌄</div>
+          <div class="bell">🔔<b>3</b></div>
+          <div class="avatar">AD</div>
+          <b>Administrador⌄</b>
+        </div>
+      </header>
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="page active">
+        <div class="title">
+          <h1>Dashboard Executivo</h1>
+          <p>Visão geral do desempenho e retenção de clientes da sua academia.</p>
+        </div>
+
+        <div class="kpis five">
+          <article class="kpi"><i>📈</i><div><small>Taxa de Churn</small><h2>12%</h2><em class="up">↓ -2,3% vs mês anterior</em></div></article>
+          <article class="kpi"><i>👥</i><div><small>Clientes Ativos</small><h2>1.245</h2><em class="up">↑ +5,2% vs mês anterior</em></div></article>
+          <article class="kpi"><i>$</i><div><small>Receita Mensal</small><h2>R$ 85.000</h2><em class="up">↑ +8,7% vs mês anterior</em></div></article>
+          <article class="kpi"><i>👤</i><div><small>LTV Médio</small><h2>R$ 1.250</h2><em class="up">↑ +6,1% vs mês anterior</em></div></article>
+          <article class="kpi"><i>⚠</i><div><small>Clientes em Risco</small><h2>87</h2><a data-page="risco" class="link-action">Ver detalhes →</a></div></article>
+        </div>
+
+        <div class="grid dashboard-grid">
+          <article class="panel chart-line">
+            <div class="panel-head"><h3>Evolução da Taxa de Churn</h3><button>Últimos 6 meses⌄</button></div>
+            <div class="fake-line-chart">
+              <svg viewBox="0 0 700 260" preserveAspectRatio="none">
+                <line x1="40" y1="30" x2="40" y2="220" />
+                <line x1="40" y1="220" x2="660" y2="220" />
+                <polyline points="80,80 190,92 300,105 410,140 520,135 630,165" />
+                <g class="dots"><circle cx="80" cy="80" r="6"/><circle cx="190" cy="92" r="6"/><circle cx="300" cy="105" r="6"/><circle cx="410" cy="140" r="6"/><circle cx="520" cy="135" r="6"/><circle cx="630" cy="165" r="6"/></g>
+              </svg>
+              <div class="chart-labels"><span>Dez/25</span><span>Jan/26</span><span>Fev/26</span><span>Mar/26</span><span>Abr/26</span><span>Mai/26</span></div>
+            </div>
+          </article>
+
+          <article class="panel donut-panel">
+            <h3>Clientes por Faixa de Idade</h3>
+            <div class="donut-wrap"><div class="donut"><b>1.245</b><span>Total</span></div><ul><li>18 - 25 anos <b>22%</b></li><li>26 - 35 anos <b>28%</b></li><li>36 - 45 anos <b>26%</b></li><li>46 - 55 anos <b>16%</b></li><li>56+ anos <b>8%</b></li></ul></div>
+          </article>
+
+          <article class="panel alerts">
+            <h3>Alertas e Insights</h3>
+            <div class="alert danger">⚠ <b>87 clientes em alto risco</b><small>Ação recomendada</small><span>→</span></div>
+            <div class="alert warn">📉 <b>Aumento de 2% no churn</b><small>Comparado ao mês anterior</small><span>→</span></div>
+            <div class="alert ok">✓ <b>23 clientes recuperados</b><small>Nos últimos 30 dias</small><span>→</span></div>
+            <div class="alert info">ⓘ <b>LTV médio cresceu 6,1%</b><small>Excelente desempenho!</small><span>→</span></div>
+          </article>
+
+          <article class="panel table-panel wide">
+            <h3>Top 5 Clientes em Risco de Cancelamento</h3>
+            <table>
+              <thead><tr><th>Cliente</th><th>Última Atividade</th><th>Frequência</th><th>LTV</th><th>Score</th><th>Probabilidade</th><th>Ação Recomendada</th></tr></thead>
+              <tbody>
+                <tr><td>Ana Paula Silva</td><td>23/04/2026</td><td>1x por semana</td><td>R$ 2.400</td><td><mark class="red">92</mark></td><td>92%</td><td>Contato imediato</td></tr>
+                <tr><td>Carlos Eduardo</td><td>20/04/2026</td><td>2x por semana</td><td>R$ 1.800</td><td><mark class="red">85</mark></td><td>85%</td><td>Oferta personalizada</td></tr>
+                <tr><td>Juliana Martins</td><td>18/04/2026</td><td>1x por semana</td><td>R$ 1.600</td><td><mark>72</mark></td><td>72%</td><td>Reengajamento</td></tr>
+                <tr><td>Rafael Almeida</td><td>15/04/2026</td><td>3x por semana</td><td>R$ 2.100</td><td><mark>65</mark></td><td>65%</td><td>Benefícios exclusivos</td></tr>
+                <tr><td>Beatriz Lima</td><td>10/04/2026</td><td>1x por semana</td><td>R$ 1.300</td><td><mark>61</mark></td><td>61%</td><td>Desconto especial</td></tr>
+              </tbody>
+            </table>
+            <a class="bottom-link" data-page="risco">Ver todos os clientes em risco →</a>
+          </article>
+
+          <article class="panel summary-panel">
+            <h3>Resumo do Mês</h3>
+            <div class="summary-grid"><div><i>👥</i><b>156</b><span>Novos Clientes</span><em>↑ +12%</em></div><div><i>◎</i><b>23</b><span>Clientes Recuperados</span><em>↑ +8%</em></div><div><i>🛡</i><b>R$ 18.500</b><span>Churn Evitado</span><em>↑ +15%</em></div><div><i>🎯</i><b>34</b><span>Ações de Retenção</span><em>↑ +7%</em></div></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PERFIL -->
+      <section id="perfil" class="page">
+        <p class="crumb">← Clientes › Perfil do Cliente</p>
+        <div class="title"><h1>Perfil do Cliente</h1><p>Visualize informações detalhadas e o histórico do cliente.</p></div>
+        <div class="search-box">🔎 Ana Paula Silva <span>×</span></div>
+        <div class="grid profile-grid">
+          <article class="panel person"><div class="big-avatar">AP</div><h2>Ana Paula Silva</h2><p>ana.silva@email.com</p><b class="badge danger">Alto Risco</b><div class="person-data"><span>Cliente desde<b>12/09/2023</b></span><span>Segmento<b>Serviços</b></span><span>Responsável<b>Julia Carvalho</b></span><span>Telefone<b>(11) 99999-8888</b></span><span>Cidade<b>São Paulo - SP</b></span></div></article>
+          <article class="panel score"><h3>Score de Churn</h3><h1>92% <span>Risco Crítico</span></h1><em class="danger-text">↑ +18% vs mês anterior</em><div class="risk-bar"><span></span></div><div class="risk-scale"><b>0%</b><b>50%</b><b>100%</b></div></article>
+          <article class="panel ai-card"><h3>IA Recomenda</h3><div class="recommend">☎ <b>Contatar cliente imediatamente</b><p>Alto risco de cancelamento detectado. Últimas interações indicam insatisfação com o atendimento.</p></div><button class="outline">Registrar contato</button></article>
+          <article class="panel chart-line"><h3>Evolução do Risco</h3><div class="mini-chart redline"></div></article>
+          <article class="panel list"><h3>Histórico de Compras <a>Ver todas</a></h3><p>23/04/2026 <b>Serviço Mensal</b> <strong>R$ 300,00</strong></p><p>23/03/2026 <b>Serviço Mensal</b> <strong>R$ 300,00</strong></p><p>23/02/2026 <b>Serviço Mensal</b> <strong>R$ 300,00</strong></p><p>23/01/2026 <b>Serviço Mensal</b> <strong>R$ 300,00</strong></p></article>
+          <article class="panel list"><h3>Últimas Interações <a>Ver todas</a></h3><p>29/04/2026 <b>E-mail</b> <strong>Dúvida sobre cobrança</strong></p><p>26/04/2026 <b>Chat</b> <strong>Atendimento demorado</strong></p><p>22/04/2026 <b>E-mail</b> <strong>Solicitação de cancelamento</strong></p><p>20/04/2026 <b>Ligação</b> <strong>Informações de contrato</strong></p></article>
+          <article class="panel factors"><h3>Principais Fatores de Risco</h3><div><span>📉 <b>Queda na frequência de uso</b><small>-25% vs mês anterior</small></span><span>💬 <b>Atendimentos recentes negativos</b><small>2 interações negativas</small></span><span>⏱ <b>Aumento no tempo de resposta</b><small>Acima da média</small></span><span>✖ <b>Sinal de cancelamento</b><small>Solicitação recente detectada</small></span></div></article>
+        </div>
+      </section>
+
+      <!-- RISCO -->
+      <section id="risco" class="page">
+        <div class="title"><h1>Clientes em Risco</h1><p>Lista de clientes classificados por probabilidade de churn.</p></div>
+        <div class="kpis four risk-kpis"><article class="risk-card danger"><i>△</i><div><small>Alto Risco</small><h2>15 <span>(12%)</span></h2><p>Clientes</p></div></article><article class="risk-card warn"><i>△</i><div><small>Médio Risco</small><h2>42 <span>(33%)</span></h2><p>Clientes</p></div></article><article class="risk-card ok"><i>✓</i><div><small>Baixo Risco</small><h2>120 <span>(48%)</span></h2><p>Clientes</p></div></article><article class="risk-card info"><i>👥</i><div><small>Clientes Monitorados</small><h2>177</h2><p>Total de clientes</p></div></article></div>
+        <div class="filters"><input id="riskSearch" placeholder="🔎 Buscar cliente..."><div>📅 <b>01/05/2026 - 31/05/2026</b>⌄</div><div>Risco<br><b>Todos⌄</b></div><div>Segmento<br><b>Todos⌄</b></div><div>Responsável<br><b>Todos⌄</b></div><button class="clear-filter">↻ Limpar filtros</button></div>
+        <div class="risk-layout"><article class="panel table-panel"><h3>Clientes em Risco de Churn</h3><table><thead><tr><th>Cliente</th><th>Score IA</th><th>Tendência</th><th>Última compra</th><th>LTV</th><th>Receita em risco</th><th>Próxima ação</th></tr></thead><tbody id="risk-table"></tbody></table><div class="pagination"><span>Mostrando 1 a 7 de 177 clientes</span><button>Anterior</button><button class="active-page">1</button><button>2</button><button>3</button><button>Próxima</button></div></article><aside><article class="panel alerts"><h3>IA Recomenda Hoje</h3><div class="alert danger">☎ <b>Contatar Ana Paula Silva</b><small>Risco crítico de churn</small><span>→</span></div><div class="alert warn">🎁 <b>Enviar oferta para Carlos Eduardo</b><small>Alta probabilidade de churn</small><span>→</span></div><div class="alert warn">✉ <b>Reativar Juliana Martins</b><small>Cliente inativo há 7 dias</small><span>→</span></div><div class="alert ok">🏷 <b>Oferecer benefício para Rafael Almeida</b><small>Tendência de queda detectada</small><span>→</span></div></article><article class="panel mini-summary"><h3>Resumo do Risco</h3><div><b>74%</b><span>Probabilidade média</span></div><div><b>R$ 38.400</b><span>Receita em risco</span></div><div><b>R$ 2.130</b><span>LTV médio em risco</span></div><div><b>83%</b><span>Clientes recuperáveis</span></div><button class="primary">▷ Executar plano de retenção</button></article></aside></div>
+      </section>
+
+      <!-- RETENÇÃO -->
+      <section id="retencao" class="page">
+        <div class="title"><h1>Ações de Retenção</h1><p>Acompanhe e gerencie as ações de retenção e seus resultados.</p></div>
+        <div class="kpis four"><article class="kpi"><i>♙</i><div><small>Clientes Recuperados</small><h2>156</h2><em class="up">↑ 12% vs mês anterior</em></div></article><article class="kpi"><i>📣</i><div><small>Campanhas Ativas</small><h2>23</h2><em class="up">↑ 8% vs mês anterior</em></div></article><article class="kpi"><i>◎</i><div><small>Taxa de Conversão</small><h2>18,5%</h2><em class="up">↑ 2,3pp vs mês anterior</em></div></article><article class="kpi"><i>$</i><div><small>Receita Recuperada</small><h2>R$ 18.500</h2><em class="up">↑ 15% vs mês anterior</em></div></article></div>
+        <div class="filters"><input id="actionSearch" placeholder="🔎 Buscar cliente ou ação..."><div>📅 <b>01/05/2026 - 31/05/2026</b>⌄</div><div>Status<br><b>Todos⌄</b></div><div>Tipo de Ação<br><b>Todos⌄</b></div><div>Responsável<br><b>Todos⌄</b></div><button class="clear-filter">↻ Limpar filtros</button></div>
+        <article class="panel table-panel"><h3>Ações de Retenção</h3><table><thead><tr><th>Cliente</th><th>Ação</th><th>Responsável</th><th>Status</th><th>Resultado</th><th>Data</th><th>Receita Impactada</th><th></th></tr></thead><tbody id="actions-table"></tbody></table><div class="pagination"><span>Mostrando 1 a 7 de 23 ações</span><button>Anterior</button><button class="active-page">1</button><button>2</button><button>3</button><button>Próxima</button></div></article>
+      </section>
+
+      <!-- ANÁLISES -->
+      <section id="analytics" class="page">
+        <div class="title"><h1>Análises</h1><p>Acompanhe insights para evolução, retenção e crescimento.</p></div>
+        <div class="kpis four">
+          <article class="kpi"><i>📈</i><div><small>Taxa de Churn</small><h2>12%</h2><em class="up">↓ -2,3pp vs mês anterior</em></div></article>
+          <article class="kpi"><i>💰</i><div><small>Receita em Risco</small><h2>R$ 38.400</h2><em class="danger-text">↑ 15%</em></div></article>
+          <article class="kpi"><i>👤</i><div><small>LTV Médio</small><h2>R$ 2.130</h2><em class="up">↑ 7%</em></div></article>
+          <article class="kpi"><i>◎</i><div><small>Receita Recuperada</small><h2>R$ 18.500</h2><em class="up">↑ 15%</em></div></article>
+        </div>
+        <div class="analytics-grid">
+          <article class="panel chart-card"><h3>Evolução da Taxa de Churn</h3><div class="bars"></div></article>
+          <article class="panel chart-card"><h3>Churn por Segmento</h3><div class="donut small"><b>12%</b><span>Churn</span></div></article>
+          <article class="panel chart-card"><h3>Receita em Risco por Segmento</h3><div class="horizontal-bars"><span style="--w:82%">Serviços</span><span style="--w:63%">Planos</span><span style="--w:45%">Corporativo</span><span style="--w:31%">VIP</span></div></article>
+          <article class="panel insights-box"><h3>Insights da IA</h3><p>✓ Campanhas personalizadas têm maior conversão.</p><p>✓ Clientes com relacionamento acima de 2 anos têm menor risco de cancelamento.</p><p>✓ O maior risco está concentrado em clientes com queda recente de frequência.</p></article>
+        </div>
+      </section>
+
+      <!-- RELATÓRIOS -->
+      <section id="relatorios" class="page">
+        <div class="title"><h1>Relatórios</h1><p>Exportações executivas simuladas para acompanhamento gerencial.</p></div>
+        <div class="report-grid">
+          <article class="panel report-card"><i>📄</i><h3>Dashboard Executivo</h3><p>Resumo mensal com KPIs, churn, receita e clientes em risco.</p><button class="outline action-demo">Exportar PDF</button></article>
+          <article class="panel report-card"><i>📊</i><h3>Clientes em Risco</h3><p>Lista priorizada por score de churn e receita impactada.</p><button class="outline action-demo">Exportar Excel</button></article>
+          <article class="panel report-card"><i>🎯</i><h3>Ações de Retenção</h3><p>Acompanhamento de status, responsáveis e resultados.</p><button class="outline action-demo">Gerar relatório</button></article>
+          <article class="panel report-card"><i>🤖</i><h3>Insights da IA</h3><p>Sugestões automáticas para redução de cancelamentos.</p><button class="outline action-demo">Baixar análise</button></article>
+        </div>
+      </section>
+
+      <!-- CONFIGURAÇÕES -->
+      <section id="config" class="page">
+        <div class="title"><h1>Configurações</h1><p>Área demonstrativa para parametrização da plataforma.</p></div>
+        <div class="settings-grid">
+          <article class="panel"><h3>Preferências da Conta</h3><p><b>Empresa:</b> AXT Intelligence</p><p><b>Usuário:</b> Administrador</p><p><b>Período padrão:</b> Últimos 30 dias</p></article>
+          <article class="panel"><h3>Alertas Inteligentes</h3><p>✓ Notificar clientes com score acima de 80%</p><p>✓ Recomendar ação de retenção automaticamente</p><p>✓ Exibir receita estimada em risco</p></article>
+          <article class="panel"><h3>Integrações Futuras</h3><p>CRM, WhatsApp, E-mail marketing e BI executivo.</p><button class="primary action-demo">Salvar configurações</button></article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">✅ Ação concluída com sucesso.</div>
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-icon">✓</div>
+      <h2 id="modalTitle">Plano iniciado</h2>
+      <p id="modalText">87 clientes foram enviados para acompanhamento. A IA priorizou os casos com maior receita em risco.</p>
+      <button class="primary" id="modalOk">Entendi</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
